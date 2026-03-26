@@ -110,14 +110,21 @@ app.post('/api/products', adminAuth, upload.single('image'), async (req, res) =>
     if (req.file) {
       const base64Image = req.file.buffer.toString('base64');
       imageUrl = `data:${req.file.mimetype};base64,${base64Image}`;
+      console.log(`[Studio] Received image: ${req.file.originalname} (${req.file.size} bytes)`);
+    }
+
+    if (!imageUrl) {
+      console.warn('[Studio] Upload aborted: No image or URL provided');
+      return res.status(400).json({ error: 'Product image is required.' });
     }
 
     const product = new Product({ name, description, price, imageUrl });
     const saved = await product.save();
+    console.log(`[Studio] Product added successfully: ${name}`);
     res.status(201).json(saved);
   } catch (err) {
-    console.error('Upload Error:', err);
-    res.status(400).json({ error: 'Failed to create product' });
+    console.error('[Studio] Critical Upload Error:', err.message);
+    res.status(400).json({ error: 'Database rejected product', details: err.message });
   }
 });
 

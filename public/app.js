@@ -273,15 +273,19 @@
         headers: { 'Authorization': token },
         body: formData
       })
-      .then(res => {
-        if (!res.ok) throw new Error();
-        return res.json();
+      .then(async res => {
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || data.details || 'Server rejected the request');
+        return data;
       })
       .then(() => {
         alert('Product added successfully');
         form.reset();
       })
-      .catch(() => alert('Failed to add product.'));
+      .catch((err) => {
+        console.error('Studio Upload Exception:', err);
+        alert('Studio Error: ' + err.message);
+      });
     };
   }
 
@@ -444,7 +448,7 @@
       }))
     };
 
-    // Handing off to the PayPal API to generate a checkout session
+
     fetch('/api/pay/create-order', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -453,7 +457,6 @@
     .then(async (res) => {
       const data = await res.json();
       if (res.ok && data.approvalUrl) {
-        // Clear cart local state once we've successfully initiated the payment
         localStorage.removeItem('moon_cart');
         window.location.href = data.approvalUrl;
       } else {
