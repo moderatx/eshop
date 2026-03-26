@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="View your order history at MOON SENCE.">
+  <title>Orders - MOON SENCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Staatliches&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-brand">MOON SENCE</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/products.html">Collection</a>
+        <a href="/orders.html">Orders</a>
+        <a href="/admin.html">Studio</a>
+      </div>
+      <div class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <p style="color: var(--color-gray-400); margin-bottom: 16px; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 500;">Account</p>
+      <h1 class="page-title">Your Orders</h1>
+      <p class="page-subtitle">Track all your purchases in one place</p>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top: 80px;">
+    <div class="container">
+      <div id="feedbackMessage"></div>
+      <div class="orders-table-wrapper" id="ordersTableWrapper">
+        <table class="orders-table" id="ordersTable">
+          <thead>
+            <tr>
+              <th>Order ID</th>
+              <th>Product</th>
+              <th>Amount</th>
+              <th>Status</th>
+              <th>Date</th>
+            </tr>
+          </thead>
+          <tbody id="ordersBody"></tbody>
+        </table>
+      </div>
+      <div class="empty-state" id="ordersEmpty" style="display: none;">
+        <svg class="empty-state-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <h3 class="empty-state-title">No orders yet</h3>
+        <p class="empty-state-text">When you make a purchase, it will appear here</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-divider" style="margin-top: 0;"></div>
+      <div class="footer-bottom">
+        <span>2026 MOON SENCE. All rights reserved.</span>
+        <span>Designed with precision</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

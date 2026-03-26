@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - MOON SENCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:opsz,wght@0,17..18,400..700&family=Staatliches&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="flex-center">
+
+  <div class="container" style="max-width: 400px; padding: 40px 20px;">
+    <div class="form-container fade-in">
+      <div style="text-align: center; margin-bottom: 32px;">
+        <a href="/" class="nav-brand" style="font-size: 2rem; display: block; margin-bottom: 12px;">MOON SENCE</a>
+        <h1 style="font-size: 1.25rem; font-weight: 500; color: var(--color-gray-400); letter-spacing: 0.05em; text-transform: uppercase;">Studio Portal</h1>
+      </div>
+      
+      <div id="loginAlert"></div>
+      
+      <form id="adminLoginForm">
+        <div class="form-group">
+          <label class="form-label">Username</label>
+          <input class="form-input" type="text" id="adminUsername" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input class="form-input" type="password" id="adminPassword" required>
+        </div>
+        <button type="submit" class="btn-primary btn-primary--dark" style="width: 100%; margin-top: 16px;">
+          Authorize
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

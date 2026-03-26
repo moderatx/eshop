@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explore our curated collection of premium club wear and accessories.">
+  <title>Collection - MOON SENCE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&family=Staatliches&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="container nav-inner">
+      <a href="/" class="nav-brand">MOON SENCE</a>
+      <div class="nav-links" id="navLinks">
+        <a href="/">Home</a>
+        <a href="/products.html">Collection</a>
+        <a href="/orders.html">Orders</a>
+        <a href="/admin.html">Studio</a>
+      </div>
+      <div class="nav-mobile-toggle" id="navToggle" aria-label="Toggle navigation">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <div class="page-header">
+    <div class="container">
+      <p class="hero-label" style="color: var(--color-gray-400); margin-bottom: 16px; font-size: 0.75rem; letter-spacing: 0.3em; text-transform: uppercase; font-weight: 500;">Browse</p>
+      <h1 class="page-title">The Collection</h1>
+      <p class="page-subtitle">Every piece, curated for the culture</p>
+    </div>
+  </div>
+
+  <section class="section" style="padding-top: 80px;">
+    <div class="container">
+      <div class="search-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="searchInput" placeholder="Search the collection...">
+      </div>
+      <div class="grid-container" id="productsGrid"></div>
+      <div class="empty-state" id="emptyState" style="display: none;">
+        <svg class="empty-state-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <h3 class="empty-state-title">No results found</h3>
+        <p class="empty-state-text">Try adjusting your search terms</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">MOON SENCE</div>
+          <p class="footer-tagline">Premium club wear and accessories for the modern nightlife connoisseur.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Shop</h4>
+          <div class="footer-links">
+            <a href="/products.html">All Products</a>
+            <a href="/products.html">New Arrivals</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Account</h4>
+          <div class="footer-links" id="footerLinks">
+            <a href="/orders.html">My Orders</a>
+            <a href="/admin.html">Studio</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Info</h4>
+          <div class="footer-links">
+            <a href="#">Shipping</a>
+            <a href="#">Returns</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom">
+        <span>2026 MOON SENCE. All rights reserved.</span>
+        <span>Designed with precision</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3 class="footer-heading" style="margin-bottom: 0;">Your Cart</h3>
+      <button class="cart-drawer-close" id="cartClose">&times;</button>
+    </div>
+    <div class="cart-drawer-content" id="cartDrawerContent"></div>
+    <div class="cart-drawer-footer">
+      <div class="cart-total" style="display: flex; justify-content: space-between; margin-bottom: 20px; font-weight: 600; font-size: 1.1rem;">
+        <span>Total</span>
+        <span id="cartDrawerTotal">$0.00</span>
+      </div>
+      <button class="btn-primary btn-primary--dark" style="width: 100%;" id="drawerCheckoutBtn">Checkout</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
